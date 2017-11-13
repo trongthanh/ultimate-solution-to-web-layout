@@ -121,7 +121,7 @@ module.exports = function(grunt) {
 				tasks: 'js',
 			},
 			theme: {
-				files: ['css/theme/*.css'],
+				files: ['css/reveal.css', 'css/theme/*.css'],
 			},
 			css: {
 				files: ['css/reveal.scss'],

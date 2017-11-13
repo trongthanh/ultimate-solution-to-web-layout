@@ -8,7 +8,7 @@
 
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="font/inter-ui.css">
-	<link rel="stylesheet" href="css/theme/white.css">
+	<link rel="stylesheet" href="css/theme/black.css">
 
 	<!-- Theme used for syntax highlighting of code -->
 	<link rel="stylesheet" href="css/atom-one-light.css">
@@ -25,20 +25,55 @@
 </head>
 <body>
 	<div class="reveal">
+		<header class="slides__header">
+			<img class="logo logo--vws" src="img/logo-vws.png" height="40">
+			<img class="logo logo--nau" src="img/logo-nau.png" height="40">
+		</header>
 		<div class="slides">
-			<section>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</section>
-			<section>Slide 2
-				<pre><code class="javascript">var link = document.createElement( 'link' );
-link.rel = 'stylesheet';
-link.type = 'text/css';
-link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-document.getElementsByTagName( 'head' )[0].appendChild( link );</code></pre>
+			<section>
+				<h2>The Ultimate Solution to</h2>
+				<h1>Web Layout</h1>
+				<h3>Trần Trọng Thanh</h3>
 			</section>
+			<section>
+				<p>About me:</p>
+				<h3>Trần Trọng Thanh</h3>
+				<p>CTO &amp; Co-founder Nau Studio</p>
+				<p>Front End Specialist</p>
+			</section>
+			<section>
+				<h2>A brief history of <br>Web Layout</h2>
+			</section>
+
+			<section>
+				<h2>1990's: Tables</h2>
+			</section>
+			<section>
+				<h3>Tables' problems</h3>
+				<ul>
+					<li>Tables are not meant for layouts</li>
+					<li>Unfriendly with screen readers</li>
+				</ul>
+			</section>
+			<section>
+				<h2>2000's: Floats</h2>
+				<ul>
+					<li>Need clear-fixes</li>
+					<li>Cannot control column's height</li>
+				</ul>
+			</section>
+			<section>
+				<h2>2000's: Inline-block</h2>
+				<ul>
+					<li>Compulsory inline character spaces</li>
+					<li>Hard to control block spacing</li>
+					<li>Frameworks chose to implement floats</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Flex Box</h2>
+			</section>
+
 		</div>
 	</div>
 
@@ -51,6 +86,8 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );</code></pre>
 		// - https://github.com/hakimel/reveal.js#configuration
 		// - https://github.com/hakimel/reveal.js#dependencies
 		Reveal.initialize({
+			controls: true,
+			history: true,
 			dependencies: [
 				{ src: 'plugin/markdown/marked.js' },
 				{ src: 'plugin/markdown/markdown.js' },
@@ -60,6 +97,27 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );</code></pre>
 				}}
 			]
 		});
+
+		// print-pdf special treatment
+		if (window.location.search.match( /print-pdf/gi ) ) {
+			var header = document.querySelector('.slides__header');
+			// swap logo with colored one for printing
+			header.querySelector('.logo--vws').src = 'img/logo-vws-color.png';
+			header.querySelector('.logo--nau').src = 'img/logo-nau-color.png';
+
+			Reveal.addEventListener('ready', function(event) {
+				console.log('Reveal ready');
+				// insert header into every slide for printing
+				var slides = document.querySelectorAll('.slide-background');
+				// console.log('slides:', slides.length);
+				Array.prototype.forEach.call(slides, (slide) => {
+					slide.prepend(header.cloneNode(true));
+				});
+
+				// hide global header
+				header.style.display = 'none';
+			});
+		}
 	</script>
 </body>
 </html>
