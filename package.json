@@ -1,19 +1,17 @@
 {
-  "name": "reveal.js",
-  "version": "3.5.0",
-  "description": "The HTML Presentation Framework",
-  "homepage": "http://lab.hakim.se/reveal-js",
-  "subdomain": "revealjs",
-  "main": "js/reveal.js",
+  "name": "slides-final-solution-web-layout",
+  "version": "1.0.0",
+  "description": "The HTML Presentation",
+  "homepage": "https://int3ractive.com",
   "scripts": {
     "test": "grunt test",
     "start": "grunt serve",
     "build": "grunt"
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "http://hakim.se"
+    "name": "Thanh Tran",
+    "email": "trongthanh@gmail.com",
+    "web": "https://int3ractive.com"
   },
   "repository": {
     "type": "git",
@@ -40,5 +38,5 @@
     "node-sass": "~3.13.0",
     "socket.io": "^1.4.8"
   },
-  "license": "MIT"
+  "license": "CC-BY-SA-4.0"
 }

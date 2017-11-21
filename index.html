@@ -70,9 +70,136 @@
 					<li>Frameworks chose to implement floats</li>
 				</ul>
 			</section>
+
 			<section>
 				<h2>Flex Box</h2>
 			</section>
+
+
+			<section>
+				<h2>CSS Grid</h2>
+			</section>
+			<section>
+				<div class="two-column">
+					<h3>CSS Grid Concepts</h3>
+					<ul class="fragment">
+						<li>Grid <strong>container</strong></li>
+						<li>Grid <strong>item</strong></li>
+						<li>Grid <strong>line</strong></li>
+						<li>Grid <strong>track</strong></li>
+						<li>Grid <strong>gap</strong></li>
+						<li>Grid <strong>cell</strong></li>
+						<li>Grid <strong>area</strong></li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						<h3>Grid <strong>container</strong> </h3>
+						<p>container elements with property:<br>
+							<code class="css">display: grid</code>
+						</p>
+					</div>
+					<div>
+
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						<h3>Grid <strong>item</strong></h3>
+						<p>direct children of grid container</p>
+					</div>
+					<div>
+						Examples...
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						<h3>Grid <strong>line</strong> </h3>
+						<p>Invisible lines divide the grid into sections.</p>
+
+					</div>
+					<div class="white-bg">
+						<div class="v-grid">
+							<div class="v-grid__cell r1 c1"></div><div class="v-grid__cell c2"></div><div class="v-grid__cell c3"></div><div class="v-grid__cell c4"></div>
+							<div class="v-grid__cell r2"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r3"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r4"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						<h3>Grid <strong>track</strong></h3>
+					</div>
+					<div class="white-bg">
+						<div class="v-grid">
+							<div class="v-grid__cell r1 c1"></div><div class="v-grid__cell c2"></div><div class="v-grid__cell c3"></div><div class="v-grid__cell c4"></div>
+							<div class="v-grid__cell r2"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r3"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r4"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__track--h"></div>
+							<div class="v-grid__track--v"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						<h3>Grid <strong>gap</strong></h3>
+						<p>A.K.A gutter</p>
+					</div>
+					<div class="white-bg">
+						<div class="v-grid v-grid--has-gap">
+							<div class="v-grid__cell r1 c1"></div><div class="v-grid__cell c2"></div><div class="v-grid__cell c3"></div><div class="v-grid__cell c4"></div>
+							<div class="v-grid__cell r2"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r3"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r4"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						<h3>Grid <strong>cell</strong></h3>
+					</div>
+					<div class="white-bg">
+						<div class="v-grid">
+							<div class="v-grid__cell r1 c1"></div><div class="v-grid__cell c2"></div><div class="v-grid__cell c3"></div><div class="v-grid__cell c4"></div>
+							<div class="v-grid__cell r2"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r3"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r4"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__single-cell"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						<h3>Grid <strong>area</strong></h3>
+					</div>
+					<div class="white-bg">
+						<div class="v-grid">
+							<div class="v-grid__cell r1 c1"></div><div class="v-grid__cell c2"></div><div class="v-grid__cell c3"></div><div class="v-grid__cell c4"></div>
+							<div class="v-grid__cell r2"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r3"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r4"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__area"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
 
 		</div>
 	</div>

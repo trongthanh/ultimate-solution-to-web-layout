@@ -5,7 +5,7 @@
  * Modified for VWS2017 by Thanh Tran http://int3ractive.com
  */
 
-/* stylelint-disable color-no-hex */
+/* stylelint-disable color-no-hex, color-named */
 section.has-light-background,
 section.has-light-background h1,
 section.has-light-background h2,
@@ -166,7 +166,7 @@ body {
 	padding: 5px;
 	font-style: italic;
 	background: rgba(255, 255, 255, 0.05);
-	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
 .reveal blockquote p:first-child,
@@ -181,23 +181,22 @@ body {
 .reveal pre {
 	display: block;
 	position: relative;
-	width: 90%;
 	margin: 20px auto;
 	text-align: left;
-	font-size: 0.55em;
-	font-family: monospace;
+	font-family: Menlo, Monaco, monospace;
 	line-height: 1.2em;
 	word-wrap: break-word;
-	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 .reveal code {
-	font-family: monospace;
+	font-family: Menlo, Monaco, monospace;
+	font-size: 0.8em;
 }
 
 .reveal pre code {
 	display: block;
-	padding: 1em;
+	padding: 2rem;
 	overflow: auto;
 	max-height: 400px;
 	word-wrap: normal;
@@ -280,7 +279,7 @@ body {
  * IMAGES
  *********************************************/
 .reveal section img {
-	margin: 15px 0px;
+	margin: 15px 0;
 	background: rgba(255, 255, 255, 0.12);
 	border: 4px solid #fff;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
@@ -357,7 +356,8 @@ body {
 }
 
 /*********************************************
- * VWS STYLES
+ * VWS 2017 THEME © int3ractive.com
+ * Custom CSS for the slide's contents
  *********************************************/
 
 .reveal h1 {
@@ -383,6 +383,178 @@ body {
 	border: 0;
 	box-shadow: none;
 	background: transparent;
+}
+
+.two-column {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 20px;
+	text-align: left;
+}
+
+.two-column h3 {
+	margin-bottom: 1.5em;
+}
+
+.white-bg {
+	background: #fff;
+}
+
+.reveal strong {
+	color: hotpink;
+}
+
+/**
+ * Visual grid
+ */
+
+.v-grid {
+	margin: 50px auto;
+	list-style-type: none;
+	display: grid;
+	width: 300px;
+	height: 300px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	background-color: #fff;
+}
+
+.v-grid--has-gap {
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+	background-color: #6cf;
+}
+
+.v-grid__cell {
+	position: relative;
+	background-color: #fff;
+	border: 1px dashed #f07;
+	border-left-color: #0f7ffe;
+	border-right-color: #0f7ffe;
+	font-size: 20px;
+}
+
+/* prettier-ignore */
+.v-grid__cell:nth-child(1) { grid-column: 1; grid-row: 1; } /* prettier-ignore */
+.v-grid__cell:nth-child(2) { grid-column: 2; grid-row: 1; } /* prettier-ignore */
+.v-grid__cell:nth-child(3) { grid-column: 3; grid-row: 1; } /* prettier-ignore */
+.v-grid__cell:nth-child(4) { grid-column: 4; grid-row: 1; } /* prettier-ignore */
+.v-grid__cell:nth-child(5) { grid-column: 1; grid-row: 2; } /* prettier-ignore */
+.v-grid__cell:nth-child(6) { grid-column: 2; grid-row: 2; } /* prettier-ignore */
+.v-grid__cell:nth-child(7) { grid-column: 3; grid-row: 2; } /* prettier-ignore */
+.v-grid__cell:nth-child(8) { grid-column: 4; grid-row: 2; } /* prettier-ignore */
+.v-grid__cell:nth-child(9) { grid-column: 1; grid-row: 3; } /* prettier-ignore */
+.v-grid__cell:nth-child(10) { grid-column: 2; grid-row: 3; } /* prettier-ignore */
+.v-grid__cell:nth-child(11) { grid-column: 3; grid-row: 3; } /* prettier-ignore */
+.v-grid__cell:nth-child(12) { grid-column: 4; grid-row: 3; } /* prettier-ignore */
+.v-grid__cell:nth-child(13) { grid-column: 1; grid-row: 4; } /* prettier-ignore */
+.v-grid__cell:nth-child(14) { grid-column: 2; grid-row: 4; } /* prettier-ignore */
+.v-grid__cell:nth-child(15) { grid-column: 3; grid-row: 4; } /* prettier-ignore */
+.v-grid__cell:nth-child(16) { grid-column: 4; grid-row: 4; }
+
+/**
+ * Grid lines columns
+ */
+
+.v-grid__cell.c1::before,
+.v-grid__cell.c2::before,
+.v-grid__cell.c3::before,
+.v-grid__cell.c4::before,
+.v-grid__cell.c4::after {
+	color: #0f7ffe;
+	position: absolute;
+	top: -35px;
+	left: -0.5ch;
+}
+
+.v-grid__cell.c1::before {
+	content: '1';
+}
+
+.v-grid__cell.c2::before {
+	content: '2';
+}
+
+.v-grid__cell.c3::before {
+	content: '3';
+}
+
+.v-grid__cell.c4::before {
+	content: '4';
+}
+
+.v-grid__cell.c4::after {
+	content: '5';
+	left: initial;
+	right: -0.5ch;
+}
+
+/**
+ * Grid lines rows
+ */
+.v-grid__cell.r1::after,
+.v-grid__cell.r2::before,
+.v-grid__cell.r3::before,
+.v-grid__cell.r4::before,
+.v-grid__cell.r4::after {
+	color: #f07;
+	position: absolute;
+	top: -0.7em;
+	left: -25px;
+}
+
+.v-grid__cell.r1::after {
+	content: '1';
+}
+
+.v-grid__cell.r2::before {
+	content: '2';
+}
+
+.v-grid__cell.r3::before {
+	content: '3';
+}
+
+.v-grid__cell.r4::before {
+	content: '4';
+}
+
+.v-grid__cell.r4::after {
+	content: '5';
+	top: initial;
+	bottom: -0.7em;
+}
+
+/**
+ * Grid tracks, cell and area
+ */
+
+.v-grid__track--h {
+	grid-column: 1 / 5;
+	grid-row: 2 / 3;
+	background-color: #f07;
+	opacity: 0.5;
+}
+
+.v-grid__track--v {
+	grid-column: 2 / 3;
+	grid-row: 1 / 5;
+	background-color: #0f7ffe;
+	opacity: 0.5;
+}
+
+.v-grid__single-cell {
+	grid-column: 2;
+	grid-row: 2;
+	background-color: #6cf;
+	z-index: 1;
+}
+
+.v-grid__area {
+	grid-column: 2 / 4;
+	grid-row: 2 / 4;
+	background-color: #6cf;
+	z-index: 1;
 }
 
 /*********************************************
