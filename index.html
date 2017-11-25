@@ -33,48 +33,237 @@
 			<section>
 				<h2>The Ultimate Solution to</h2>
 				<h1>Web Layout</h1>
-				<h3>Trần Trọng Thanh</h3>
+				<p><small>Vietnam Web Summit 12/2017</small></p>
 			</section>
 			<section>
 				<p>About me:</p>
 				<h3>Trần Trọng Thanh</h3>
-				<p>CTO &amp; Co-founder Nau Studio</p>
+				<p>Co-founder &amp; CTO Nau Studio</p>
 				<p>Front End Specialist</p>
+				<p><small>Github, Twitter, Facebook: <a href="https://about.me/trongthanh">@trongthanh</a></small></p>
 			</section>
 			<section>
 				<h2>A brief history of <br>Web Layout</h2>
 			</section>
 
 			<section>
-				<h2>1990's: Tables</h2>
-			</section>
-			<section>
-				<h3>Tables' problems</h3>
-				<ul>
-					<li>Tables are not meant for layouts</li>
-					<li>Unfriendly with screen readers</li>
+				<ul class="timeline">
+					<li class="timeline__item timeline__item--active"><h2 class="timeline__label">No layout</h2></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
 				</ul>
 			</section>
 			<section>
-				<h2>2000's: Floats</h2>
+				<img src="img/nolayout-netscape.png" height="400" alt="No layout in Navigator">
+				<div><small>Netscape Navigator</small></div>
+
+				<aside class="notes">
+					First HTML specs have only Block and Inline elements.
+				</aside>
+			</section>
+			<section>
+				<img src="img/nolayout-ie1.png" height="400" alt="No layout in IE1">
+				<div><small>Internet Explorer 1</small></div>
+			</section>
+
+			<section>
+				<ul class="timeline">
+					<li class="timeline__item"><p class="timeline__label">No layout</p></li>
+					<li class="timeline__item timeline__item--active"><h2 class="timeline__label">Tables</h2></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+				</ul>
+
+				<aside class="notes">
+
+				</aside>
+			</section>
+			<section>
+				<img src="img/table-apple-1997.png" height="570" alt="Apple.com and table layout">
+				<div><small>Apple.com 1997</small></div>
+			</section>
+
+			<section>
+				<img src="img/table-facebook-2005.png" height="570" alt="facebook.com and table layout">
+				<div><small>Facebook.com 2005</small></div>
+
+				<aside class="notes">
+					Although Zuckerberge was a programming genious, he's still novice with Web Layout
+				</aside>
+			</section>
+
+			<section>
+				<div class="two-column">
+					<div>
+						<h3>Tables</h3>
+						<ul>
+							<li>Tables are not meant for layouts</li>
+							<li>Unfriendly with screen readers</li>
+							<li>Fixed width</li>
+						</ul>
+					</div>
+					<div>
+						<img src="img/table-apple-1997-inspector.png" height="470" alt="Apple.com 1997 with FF elements inspector showing tables markups">
+					</div>
+				</div>
+			</section>
+			<section>
+				<ul class="timeline">
+					<li class="timeline__item"><p class="timeline__label">No layout</p></li>
+					<li class="timeline__item"><p class="timeline__label">Tables</p></li>
+					<li class="timeline__item timeline__item--active"><h2 class="timeline__label">Floats</h2></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+				</ul>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						<h3>Floats</h3>
+						TODO: Origin of float
+					</div>
+					<div>
+						TODO: demo of image with text floating
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						<h3>Floats</h3>
+						TODO: code samples
+					</div>
+					<div>
+						TODO: evolution of a float layout
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<img src="img/floats-msncom-2005.png" height="500" alt="MSN.com with float layout">
+				<div><small>MSN.com 2005</small></div>
+			</section>
+			<section>
+				<img src="img/floats-csszengarden-2003-default.png" height="500" alt="csszengarden.com with default float layout">
+				<div><small>csszengarden.com default 2003</small></div>
+			</section>
+			<section>
+				<img src="img/floats-csszengarden-2003-lotus.png" height="500" alt="csszengarden.com with lotus layout">
+				<div><small>csszengarden.com with lotus theme</small></div>
+			</section>
+			<section>
+				<img src="img/floats-csszengarden-2003-sublime.png" height="500" alt="csszengarden.com with sub:lime layout">
+				<div><small>csszengarden.com with sub:lime theme</small></div>
+			</section>
+
+			<section>
+				<h2>Floats</h2>
 				<ul>
 					<li>Need clear-fixes</li>
+					<li>No center method</li>
 					<li>Cannot control column's height</li>
 				</ul>
 			</section>
 			<section>
-				<h2>2000's: Inline-block</h2>
+				<ul class="timeline">
+					<li class="timeline__item"><p class="timeline__label">No layout</p></li>
+					<li class="timeline__item"><p class="timeline__label">Tables</p></li>
+					<li class="timeline__item"><p class="timeline__label">Floats</p></li>
+					<li class="timeline__item timeline__item--active"><h2 class="timeline__label">inline-block</h2></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+				</ul>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						<h3>inline-block</h3>
+						TODO: code samples
+					</div>
+					<div>
+						TODO: evolution of a inline-block list
+					</div>
+				</div>
+			</section>
+			<section>
+				<h2>Inline-block</h2>
 				<ul>
-					<li>Compulsory inline character spaces</li>
+					<li>Implicit inline character spaces
+						<pre><code class="html">&lt;ul class="menu"&gt;
+  &lt;li class="menu-item"&gt;Home&lt;/li&gt;&lt;!-- no space
+--&gt;&lt;li class="menu-item"&gt;About&lt;/li&gt;&lt;!-- no space
+--&gt;&lt;li class="menu-item"&gt;Pricing&lt;/li&gt;&lt;!-- no space
+--&gt;&lt;li class="menu-item"&gt;Contact&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+					</li>
+
 					<li>Hard to control block spacing</li>
 					<li>Frameworks chose to implement floats</li>
 				</ul>
 			</section>
-
+			<section>
+				<ul class="timeline">
+					<li class="timeline__item"><p class="timeline__label">No layout</p></li>
+					<li class="timeline__item"><p class="timeline__label">Tables</p></li>
+					<li class="timeline__item"><p class="timeline__label">Floats</p></li>
+					<li class="timeline__item"><p class="timeline__label">inline-block</p></li>
+					<li class="timeline__item timeline__item--active"><h2 class="timeline__label">Flex Box</h2></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+				</ul>
+			</section>
 			<section>
 				<h2>Flex Box</h2>
 			</section>
-
+			<section>
+				<ul>
+					<li>1 direction layout </li>
+				</ul>
+			</section>
+			<section>
+				<ul class="timeline">
+					<li class="timeline__item"><p class="timeline__label">No layout</p></li>
+					<li class="timeline__item"><p class="timeline__label">Tables</p></li>
+					<li class="timeline__item"><p class="timeline__label">Floats</p></li>
+					<li class="timeline__item"><p class="timeline__label">inline-block</p></li>
+					<li class="timeline__item"><p class="timeline__label">Flex Box</p></li>
+					<li class="timeline__item timeline__item--active"><h2 class="timeline__label">CSS Framework</h2></li>
+					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
+				</ul>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						Tables, floats, inline-block are hacks<br>
+						Flexbox and the rest are content-out,
+					</div>
+					<div>
+						Multi-dimension outside-in approach
+					</div>
+				</div>
+			</section>
+			<section>
+				<ul class="timeline">
+					<li class="timeline__item"><p class="timeline__label">No layout</p></li>
+					<li class="timeline__item"><p class="timeline__label">Tables</p></li>
+					<li class="timeline__item"><p class="timeline__label">Floats</p></li>
+					<li class="timeline__item"><p class="timeline__label">inline-block</p></li>
+					<li class="timeline__item"><p class="timeline__label">Flex Box</p></li>
+					<li class="timeline__item"><p class="timeline__label">CSS Framework</p></li>
+					<li class="timeline__item timeline__item--active"><h2 class="timeline__label">CSS Grid</h2></li>
+				</ul>
+			</section>
 
 			<section>
 				<h2>CSS Grid</h2>
@@ -199,6 +388,20 @@
 					</div>
 				</div>
 			</section>
+			<section>
+				OK. What are benefits of CSS grid?
+			</section>
+
+			<section>
+				<h2>Looks great! What about browser support?</h2>
+			</section>
+			<section>
+				[img show browser statistics with Vietnam percentage]
+			</section>
+
+			<section>
+
+			</section>
 
 
 		</div>
@@ -213,6 +416,7 @@
 		// - https://github.com/hakimel/reveal.js#configuration
 		// - https://github.com/hakimel/reveal.js#dependencies
 		Reveal.initialize({
+			transition: 'none', //'convex',
 			controls: true,
 			history: true,
 			dependencies: [
@@ -224,6 +428,7 @@
 				}}
 			]
 		});
+
 
 		// print-pdf special treatment
 		if (window.location.search.match( /print-pdf/gi ) ) {
