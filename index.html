@@ -434,7 +434,7 @@
 			<section>
 				<h3>Flex box</h3>
 				<ul>
-					<li>One direction layout method</li>
+					<li>One directional layout method</li>
 					<li>Layout with flex boxes require hacks</li>
 				</ul>
 			</section>
@@ -449,16 +449,51 @@
 					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
 				</ul>
 			</section>
+
 			<section>
-				<div class="two-column">
-					<div>
-						Tables, floats, inline-block are hacks<br>
-						Flexbox and the rest are content-out,
-					</div>
-					<div>
-						Multi-dimension outside-in approach
-					</div>
-				</div>
+				<figure>
+					<img src="img/12-column-grid.png" height="550">
+				</figure>
+				<footer>
+					<p><a href="https://960.gs/demo.html">https://960.gs/demo.html</a></p>
+				</footer>
+			</section>
+			<section>
+				<figure>
+					<img src="img/two-possible-website-layout.png" height="520" alt="Two possible website tweet">
+				</figure>
+				<footer>
+					<p><a href="https://twitter.com/jongold/status/694591217523363840">https://twitter.com/jongold/status/694591217523363840</a></p>
+				</footer>
+			</section>
+			<section>
+				<figure>
+					<img src="img/bootstrap-everywhere.jpg" height="520" alt="Bootstrap website are everywhere and they all look similar">
+				</figure>
+				<footer>
+					<p>by Jen Simmons, <a href="https://goo.gl/1U2GjJ">https://goo.gl/1U2GjJ</a></p>
+				</footer>
+			</section>
+			<section>
+				<figure class="scrolling-image">
+					<img src="img/every-bootstrap-website-ever.png">
+				</figure>
+				<footer>
+					<p>Every F*king Bootstrap Website Ever / <a href="http://adventurega.me/bootstrap/">http://adventurega.me/bootstrap/</a></p>
+				</footer>
+			</section>
+
+			<!-- <section>
+				<h3>Current Web Layout Tools</h3>
+				<ul>
+					<li>Tables, floats, inline-blocks are hacks</li>
+					<li>Flex box only solve layout problems one direction at a time</li>
+					<li>Grid &amp; CSS frameworks limit creativity and user choice</li>
+					<li>Responsive designs with current methods are hard and unintuitive</li>
+				</ul>
+			</section> -->
+			<section>
+				<h2>Solution?</h2>
 			</section>
 			<section>
 				<ul class="timeline">
@@ -472,9 +507,6 @@
 				</ul>
 			</section>
 
-			<section>
-				<h2>CSS Grid</h2>
-			</section>
 			<section>
 				<div class="two-column">
 					<h3>CSS Grid Concepts</h3>
@@ -493,12 +525,20 @@
 				<div class="two-column">
 					<div>
 						<h3>Grid <strong>container</strong> </h3>
-						<p>container elements with property:<br>
-							<code class="css">display: grid</code>
-						</p>
+						<p>Elements containing a grid, defined by setting <code>display: grid</code></p>
 					</div>
 					<div>
-
+						<pre><code class="html"><main class="wrapper">
+  <header class="main-header"></header>
+  <div class="main-content"></div>
+  <div class="other-content"></div>
+  <aside class="sidebar"></aside>
+  <footer class="main-footer"></footer>
+</main></code></pre>
+						<hr>
+						<pre><code class="css">.wrapper {
+  display: grid;
+}</code></pre>
 					</div>
 				</div>
 			</section>
@@ -509,7 +549,14 @@
 						<p>direct children of grid container</p>
 					</div>
 					<div>
-						Examples...
+						<pre><code class="html"><main class="wrapper">
+  <header class="main-header"></header>
+  <div class="main-content"></div>
+  <div class="other-content"></div>
+  <aside class="sidebar"></aside>
+  <footer class="main-footer"></footer>
+</main></code></pre>
+						<p><small>(Here: grid items are children of <code>main.wrapper</code>)</small></p>
 					</div>
 				</div>
 			</section>
@@ -518,7 +565,7 @@
 					<div>
 						<h3>Grid <strong>line</strong> </h3>
 						<p>Invisible lines divide the grid into sections.</p>
-
+						<p>Grid lines order respect writing direction</p>
 					</div>
 					<div class="white-bg">
 						<div class="v-grid">
@@ -534,6 +581,33 @@
 				<div class="two-column">
 					<div>
 						<h3>Grid <strong>track</strong></h3>
+						<p>A grid track is the space between any two lines on the grid.</p>
+						<p>Grid tracks are content <span class="color-red">rows</span> and <span class="color-blue">columns</span></p>
+					</div>
+					<div class="white-bg">
+						<div class="v-grid">
+							<div class="v-grid__cell r1 c1"></div><div class="v-grid__cell c2"></div><div class="v-grid__cell c3"></div><div class="v-grid__cell c4"></div>
+							<div class="v-grid__cell r2"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r3"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r4"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__track--h"></div>
+							<div class="v-grid__track--v"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						<h3>Grid <strong>track</strong></h3>
+						<p>Can be defined by:</p>
+						<pre><code class="css">.wrapper {
+  display: grid;
+  grid-template-columns:
+    1fr 1fr 1fr 1fr;
+  grid-template-rows:
+    1fr 1fr 1fr 1fr;
+}</code></pre>
 					</div>
 					<div class="white-bg">
 						<div class="v-grid">
@@ -551,7 +625,14 @@
 				<div class="two-column">
 					<div>
 						<h3>Grid <strong>gap</strong></h3>
-						<p>A.K.A gutter</p>
+						<p>Gutters or empty spaces between grid tracks</p>
+						<pre><code class="css">.wrapper {
+  display: grid;
+  grid-template-columns:
+    repeat(4, 1fr);
+  grid-gap: 10px;
+}</code></pre>
+
 					</div>
 					<div class="white-bg">
 						<div class="v-grid v-grid--has-gap">
@@ -562,6 +643,9 @@
 						</div>
 					</div>
 				</div>
+				<footer>
+					<p><code>grid-gap</code> is the short form for <code>grid-column-gap</code> &amp; <code>grid-row-gap</code></p>
+				</footer>
 			</section>
 			<section>
 				<div class="two-column">
@@ -575,6 +659,22 @@
 							<div class="v-grid__cell r3"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
 							<div class="v-grid__cell r4"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
 							<div class="v-grid__single-cell"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						<h3>Grid <strong>cell</strong></h3>
+						<p>Grid items are auto placed in each cell with the order of grid lines</p>
+					</div>
+					<div class="white-bg">
+						<div class="v-grid">
+							<div class="v-grid__cell v-grid__cell--filled r1 c1">1</div><div class="v-grid__cell v-grid__cell--filled c2">2</div><div class="v-grid__cell v-grid__cell--filled c3">3</div><div class="v-grid__cell v-grid__cell--filled c4">4</div>
+							<div class="v-grid__cell v-grid__cell--filled r2">5</div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r3"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r4"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
 						</div>
 					</div>
 				</div>
