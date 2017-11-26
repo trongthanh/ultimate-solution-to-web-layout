@@ -35,7 +35,9 @@
 			<section>
 				<h2>The Ultimate Solution to</h2>
 				<h1>Web Layout</h1>
-				<p><small>Vietnam Web Summit 12/2017</small></p>
+				<footer>
+					<p>Vietnam Web Summit 12-2017</p>
+				</footer>
 			</section>
 			<section>
 				<p>About me:</p>
@@ -148,7 +150,7 @@
 					</figure>
 				</div>
 				<footer>
-					<div>Image from: <a href="https://css-tricks.com/all-about-floats/">https://css-tricks.com/all-about-floats/</a href=></div>
+					<p>Image from: <a href="https://css-tricks.com/all-about-floats/">https://css-tricks.com/all-about-floats/</a href=></p>
 				</footer>
 			</section>
 
@@ -156,10 +158,9 @@
 				<div class="two-column">
 					<div>
 						<h3>Floats</h3>
-						<pre><code class="html">&lt;p&gt;
-&lt;img class=&quot;float-left&quot;
-  src=&quot;...&quot;&gt;
-&lt;/p&gt;</code></pre>
+						<pre><code class="html"><p>...
+<img class=&quot;float-left&quot; src=&quot;...&quot;>
+...</p></code></pre>
 						<pre><code class="css">.float-left {
   float: left;
 }</code></pre>
@@ -177,11 +178,98 @@
 			<section>
 				<div class="two-column">
 					<div>
-						<h3>Floats</h3>
-						TODO: code samples
+						<pre><code class="css">.wrapper {
+  border: 4px solid black;
+}
+.main-content {
+  background-color: blue;
+}
+.sidebar {
+  background-color: hotpink;
+}
+
+
+
+
+
+
+
+</code></pre><!-- Empty lines in PRE are deliberate, to keep the column at same height with final step -->
 					</div>
+					<div class="white-bg clearfix-demo">
+						<div class="wrapper">
+							<div class="main-content">
+								.main-content
+							</div>
+							<div class="sidebar">
+								.sidebar
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="two-column">
 					<div>
-						TODO: evolution of a float layout
+					<pre><code class="css">.wrapper {
+  border: 4px solid black;
+}
+.main-content {
+  background-color: blue;
+  float: left;
+}
+.sidebar {
+  background-color: hotpink;
+  float: right;
+}
+
+
+
+
+
+</code></pre><!-- Empty lines in PRE are deliberate, to keep the column at same height with final step -->
+					</div>
+					<div class="white-bg clearfix-demo clearfix-demo--float-on">
+						<div class="wrapper">
+							<div class="main-content">
+								.main-content
+							</div>
+							<div class="sidebar">
+								.sidebar
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						<pre><code class="css">.wrapper {
+  border: 4px solid black;
+}
+.main-content {
+  background-color: blue;
+  float: left;
+}
+.sidebar {
+  background-color: hotpink;
+  float: right;
+}
+.clearfix::after {
+  display: block;
+  content: '';
+  clear: both;
+}</code></pre>
+					</div>
+					<div class="white-bg clearfix-demo clearfix-demo--float-on">
+						<div class="wrapper clearfix">
+							<div class="main-content">
+								.main-content
+							</div>
+							<div class="sidebar">
+								.sidebar
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -204,12 +292,24 @@
 			</section>
 
 			<section>
-				<h2>Floats</h2>
-				<ul>
-					<li>Need clear-fixes</li>
-					<li>No center method</li>
-					<li>Cannot control column's height</li>
-				</ul>
+				<h3>Floats</h3>
+				<div class="two-column">
+					<ul>
+						<li>Need clear-fixes</li>
+						<li>No center method</li>
+						<li>Cannot control column's height</li>
+					</ul>
+					<div class="white-bg clearfix-demo clearfix-demo--float-on">
+						<div class="wrapper">
+							<div class="main-content">
+								.main-content
+							</div>
+							<div class="sidebar">
+								.sidebar
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
 			<section>
 				<ul class="timeline">
@@ -226,29 +326,35 @@
 				<div class="two-column">
 					<div>
 						<h3>inline-block</h3>
-						TODO: code samples
+						<pre><code class="css">.wrapper {
+  text-align: center;
+}
+.item {
+  display: inline-block;
+}</code></pre>
 					</div>
-					<div>
-						TODO: evolution of a inline-block list
-					</div>
+					<figure>
+						<video src="img/inline-block-center.mp4" autoplay loop></video>
+					</figure>
 				</div>
 			</section>
 			<section>
-				<h2>Inline-block</h2>
-				<ul>
-					<li>Implicit inline character spaces
-						<pre><code class="html">&lt;ul class="menu"&gt;
-  &lt;li class="menu-item"&gt;Home&lt;/li&gt;&lt;!-- no space
---&gt;&lt;li class="menu-item"&gt;About&lt;/li&gt;&lt;!-- no space
---&gt;&lt;li class="menu-item"&gt;Pricing&lt;/li&gt;&lt;!-- no space
---&gt;&lt;li class="menu-item"&gt;Contact&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-
-					</li>
-
-					<li>Hard to control block spacing</li>
-					<li>Frameworks chose to implement floats</li>
-				</ul>
+				<h3>Inline-block</h3>
+				<div class="two-column">
+					<ul>
+						<li>Implicit inline character spacing</li>
+						<li>text-align are inherited in child elements</li>
+						<li>Popular grid frameworks use floats</li>
+					</ul>
+					<div>
+						<pre><code class="html"><ul class="menu">
+  <li>Home</li><!-- no space
+--><li>About</li><!-- no space
+--><li>Pricing</li><!-- no space
+--><li>Contact</li>
+</ul></code></pre>
+					</div>
+				</div>
 			</section>
 			<section>
 				<ul class="timeline">
@@ -262,11 +368,74 @@
 				</ul>
 			</section>
 			<section>
-				<h2>Flex Box</h2>
+				<div class="two-column two-column--fixed-width">
+					<div>
+						<h3>Flex box</h3>
+						<pre><code class="html"><main class="wrapper">
+  <!-- not possible -->
+  <div class="main-content"></div>
+  <div class="other-content"></div>
+  <!-- with flex box -->
+  <aside class="sidebar"></aside>
+</main></code></pre>
+					</div>
+					<div class="white-bg flexbox-demo">
+						<div class="wrapper">
+							<div class="container">
+								<div class="main-content">
+									.main-content
+								</div>
+								<div class="other-content">
+									.other-content
+								</div>
+							</div>
+							<div class="sidebar">
+								.sidebar
+							</div>
+						</div>
+					</div>
+				</div>
+				<aside class="notes">
+					At first, this layout looks like it can be solved with `flex-direction: column`.
+					But the height of content is unknown so we don't know where to set the wrapper
+					height so that sidebar can be wrapped to next column.
+				</aside>
 			</section>
 			<section>
+				<div class="two-column two-column--fixed-width">
+					<div>
+						<h3>Flex box</h3>
+						<pre><code class="html"><main class="wrapper">
+  <div class="container">
+    <div class="main-content"></div>
+    <div class="other-content"></div>
+  </div>
+  <aside class="sidebar"></aside>
+</main></code></pre>
+					</div>
+					<div class="white-bg flexbox-demo flexbox-demo--show-container">
+						<div class="wrapper">
+							<div class="container">
+								<div class="main-content">
+									.main-content
+								</div>
+								<div class="other-content">
+									.other-content
+								</div>
+							</div>
+							<div class="sidebar">
+								.sidebar
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h3>Flex box</h3>
 				<ul>
-					<li>1 direction layout </li>
+					<li>One direction layout method</li>
+					<li>Layout with flex boxes require hacks</li>
 				</ul>
 			</section>
 			<section>
