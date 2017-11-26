@@ -6,12 +6,14 @@
 
 	<title>reveal.js</title>
 
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="css/atom-one-dark.css">
+	<!-- Base RevealJS styles -->
 	<link rel="stylesheet" href="css/reveal.css">
+	<!-- VWS styles based on dark theme -->
 	<link rel="stylesheet" href="font/inter-ui.css">
 	<link rel="stylesheet" href="css/theme/black.css">
 
-	<!-- Theme used for syntax highlighting of code -->
-	<link rel="stylesheet" href="css/atom-one-light.css">
 
 	<!-- Printing and PDF exports -->
 	<script>
@@ -58,16 +60,20 @@
 				</ul>
 			</section>
 			<section>
-				<img src="img/nolayout-netscape.png" height="400" alt="No layout in Navigator">
-				<div><small>Netscape Navigator</small></div>
+				<figure>
+					<img src="img/nolayout-netscape.png" height="400" alt="No layout in Navigator">
+					<figcaption>Netscape Navigator</figcaption>
+				</figure>
 
 				<aside class="notes">
 					First HTML specs have only Block and Inline elements.
 				</aside>
 			</section>
 			<section>
-				<img src="img/nolayout-ie1.png" height="400" alt="No layout in IE1">
-				<div><small>Internet Explorer 1</small></div>
+				<figure>
+					<img src="img/nolayout-ie1.png" height="400" alt="No layout in IE1">
+					<figcaption>Internet Explorer 1</figcaption>
+				</figure>
 			</section>
 
 			<section>
@@ -86,13 +92,17 @@
 				</aside>
 			</section>
 			<section>
-				<img src="img/table-apple-1997.png" height="570" alt="Apple.com and table layout">
-				<div><small>Apple.com 1997</small></div>
+				<figure>
+					<img src="img/table-apple-1997.png" height="570" alt="Apple.com and table layout">
+					<figcaption>Apple.com 1997</figcaption>
+				</figure>
 			</section>
 
 			<section>
-				<img src="img/table-facebook-2005.png" height="570" alt="facebook.com and table layout">
-				<div><small>Facebook.com 2005</small></div>
+				<figure>
+					<img src="img/table-facebook-2005.png" height="570" alt="facebook.com and table layout">
+					<figcaption>Facebook.com 2005</figcaption>
+				</figure>
 
 				<aside class="notes">
 					Although Zuckerberge was a programming genious, he's still novice with Web Layout
@@ -109,9 +119,9 @@
 							<li>Fixed width</li>
 						</ul>
 					</div>
-					<div>
+					<figure>
 						<img src="img/table-apple-1997-inspector.png" height="470" alt="Apple.com 1997 with FF elements inspector showing tables markups">
-					</div>
+					</figure>
 				</div>
 			</section>
 			<section>
@@ -125,14 +135,42 @@
 					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
 				</ul>
 			</section>
+
 			<section>
 				<div class="two-column">
 					<div>
 						<h3>Floats</h3>
-						TODO: Origin of float
+						<p>CSS Floats were created to imitate print layout counterparts</p>
 					</div>
+					<figure>
+						<img src="img/floats-print-layout.png" alt="float in print layout">
+						<figcaption><em>Floats in print layout</em></figcaption>
+					</figure>
+				</div>
+				<footer>
+					<div>Image from: <a href="https://css-tricks.com/all-about-floats/">https://css-tricks.com/all-about-floats/</a href=></div>
+				</footer>
+			</section>
+
+			<section>
+				<div class="two-column">
 					<div>
-						TODO: demo of image with text floating
+						<h3>Floats</h3>
+						<pre><code class="html">&lt;p&gt;
+&lt;img class=&quot;float-left&quot;
+  src=&quot;...&quot;&gt;
+&lt;/p&gt;</code></pre>
+						<pre><code class="css">.float-left {
+  float: left;
+}</code></pre>
+
+					</div>
+					<div class="floats-demo white-bg">
+						<p>The float CSS property specifies that an element should be placed along the left or right side of its container, allowing text and inline elements to wrap around it.
+						<img class="float-left" src="img/float-img.jpg" alt="Float image doge" width="120">
+						The element is removed from the normal flow of the web page, though still remaining a part of the flow (in contrast to absolute positioning).
+						A floating element is one where the computed value of float is not none.
+						As mentioned above, when an element is floated, it is taken out of the normal flow of the document (though still remaining part of it). It is shifted to the left, or right, until it touches the edge of its containing box, or another floated element.</p>
 					</div>
 				</div>
 			</section>
@@ -418,6 +456,7 @@
 		Reveal.initialize({
 			transition: 'none', //'convex',
 			controls: true,
+			controlsTutorial: true,
 			history: true,
 			dependencies: [
 				{ src: 'plugin/markdown/marked.js' },
