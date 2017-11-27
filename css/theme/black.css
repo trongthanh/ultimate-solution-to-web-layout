@@ -458,7 +458,7 @@ figure {
 }
 
 figcaption {
-	font-size: 0.7em;
+	font-size: 0.6em;
 	text-align: center;
 }
 
@@ -483,10 +483,11 @@ section > footer {
 }
 
 .scrolling-image {
-	max-height: 550px;
+	max-height: 520px;
 	overflow-y: scroll;
 	position: relative;
 	box-shadow: inset 0 -10px 10px rgba(0, 0, 0, 0.6);
+	margin-bottom: 20px;
 }
 
 .reveal .scrolling-image img {
@@ -496,6 +497,7 @@ section > footer {
 	max-width: none;
 	max-height: none;
 	position: relative;
+	display: block;
 	z-index: -1;
 }
 
@@ -693,7 +695,7 @@ section > footer {
 }
 
 .v-grid__area {
-	grid-column: 2 / 4;
+	grid-column: 1 / 4;
 	grid-row: 2 / 4;
 	background-color: var(--c-blue);
 	z-index: 1;

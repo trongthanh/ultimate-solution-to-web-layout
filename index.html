@@ -453,34 +453,28 @@
 			<section>
 				<figure>
 					<img src="img/12-column-grid.png" height="550">
+					<figcaption><a href="https://960.gs/demo.html">https://960.gs/demo.html</a></figcaption>
 				</figure>
-				<footer>
-					<p><a href="https://960.gs/demo.html">https://960.gs/demo.html</a></p>
-				</footer>
 			</section>
 			<section>
 				<figure>
 					<img src="img/two-possible-website-layout.png" height="520" alt="Two possible website tweet">
+					<figcaption><a href="https://twitter.com/jongold/status/694591217523363840">https://twitter.com/jongold/status/694591217523363840</a></figcaption>
 				</figure>
-				<footer>
-					<p><a href="https://twitter.com/jongold/status/694591217523363840">https://twitter.com/jongold/status/694591217523363840</a></p>
-				</footer>
 			</section>
 			<section>
 				<figure>
 					<img src="img/bootstrap-everywhere.jpg" height="520" alt="Bootstrap website are everywhere and they all look similar">
+					<figcaption>by Jen Simmons, <a href="https://goo.gl/1U2GjJ">https://goo.gl/1U2GjJ</a></figcaption>
 				</figure>
-				<footer>
-					<p>by Jen Simmons, <a href="https://goo.gl/1U2GjJ">https://goo.gl/1U2GjJ</a></p>
-				</footer>
 			</section>
 			<section>
-				<figure class="scrolling-image">
-					<img src="img/every-bootstrap-website-ever.png">
+				<figure>
+					<div class="scrolling-image">
+						<img src="img/every-bootstrap-website-ever.png">
+					</div>
+					<figcaption>Every F*king Bootstrap Website Ever / <a href="http://adventurega.me/bootstrap/">http://adventurega.me/bootstrap/</a></figcaption>
 				</figure>
-				<footer>
-					<p>Every F*king Bootstrap Website Ever / <a href="http://adventurega.me/bootstrap/">http://adventurega.me/bootstrap/</a></p>
-				</footer>
 			</section>
 
 			<!-- <section>
@@ -566,6 +560,7 @@
 						<h3>Grid <strong>line</strong> </h3>
 						<p>Invisible lines divide the grid into sections.</p>
 						<p>Grid lines order respect writing direction</p>
+						<p>Grid lines are 1-based! </p>
 					</div>
 					<div class="white-bg">
 						<div class="v-grid">
@@ -600,7 +595,7 @@
 				<div class="two-column">
 					<div>
 						<h3>Grid <strong>track</strong></h3>
-						<p>Can be defined by:</p>
+						<p>Defined at container:</p>
 						<pre><code class="css">.wrapper {
   display: grid;
   grid-template-columns:
@@ -620,6 +615,90 @@
 						</div>
 					</div>
 				</div>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						<h3>Grid <strong>cell</strong></h3>
+						<p>Intersection between grid row and grid column. Conceptually it is like a table cell.</p>
+					</div>
+					<div class="white-bg">
+						<div class="v-grid">
+							<div class="v-grid__cell r1 c1"></div><div class="v-grid__cell c2"></div><div class="v-grid__cell c3"></div><div class="v-grid__cell c4"></div>
+							<div class="v-grid__cell r2"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r3"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r4"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__single-cell"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						<h3>Grid <strong>cell</strong></h3>
+						<p>Grid items are auto placed in cells with the order of grid lines.</p>
+						<p>Rows are implicitly inserted if there are more items than cells.</p>
+					</div>
+					<div class="white-bg">
+						<div class="v-grid">
+							<div class="v-grid__cell v-grid__cell--filled r1 c1">1</div><div class="v-grid__cell v-grid__cell--filled c2">2</div><div class="v-grid__cell v-grid__cell--filled c3">3</div><div class="v-grid__cell v-grid__cell--filled c4">4</div>
+							<div class="v-grid__cell v-grid__cell--filled r2">5</div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r3"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r4"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						<h3>Grid <strong>cell</strong></h3>
+						<p>Or they can be mannually placed with:</p>
+						<pre><code class="css">.cell {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}</code></pre>
+					</div>
+					<div class="white-bg">
+						<div class="v-grid">
+							<div class="v-grid__cell r1 c1"></div><div class="v-grid__cell c2"></div><div class="v-grid__cell c3"></div><div class="v-grid__cell c4"></div>
+							<div class="v-grid__cell r2"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r3"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r4"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__single-cell"></div>
+						</div>
+					</div>
+				</div>
+				<footer>
+					<p>The short forms are <code>grid-column: 2 / 3; grid-row: 2 / 3</code></p>
+				</footer>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						<h3>Grid <strong>area</strong></h3>
+						<p>Rectangular area between 4 grid lines.</p>
+						<pre><code class="css">.area {
+  grid-column: 2 / -2; /*(1)*/
+  grid-row: 2 / span 2; /*(2)*/
+}</code></pre>
+					</div>
+					<div class="white-bg">
+						<div class="v-grid">
+							<div class="v-grid__cell r1 c1"></div><div class="v-grid__cell c2"></div><div class="v-grid__cell c3"></div><div class="v-grid__cell c4"></div>
+							<div class="v-grid__cell r2"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r3"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__cell r4"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
+							<div class="v-grid__area"></div>
+						</div>
+					</div>
+				</div>
+				<footer>
+					<p>(1) Minus (-) count lines from opposite side. (2) span the track instead of specific line No.</p>
+				</footer>
 			</section>
 			<section>
 				<div class="two-column">
@@ -647,67 +726,36 @@
 					<p><code>grid-gap</code> is the short form for <code>grid-column-gap</code> &amp; <code>grid-row-gap</code></p>
 				</footer>
 			</section>
+
 			<section>
-				<div class="two-column">
-					<div>
-						<h3>Grid <strong>cell</strong></h3>
-					</div>
-					<div class="white-bg">
-						<div class="v-grid">
-							<div class="v-grid__cell r1 c1"></div><div class="v-grid__cell c2"></div><div class="v-grid__cell c3"></div><div class="v-grid__cell c4"></div>
-							<div class="v-grid__cell r2"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
-							<div class="v-grid__cell r3"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
-							<div class="v-grid__cell r4"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
-							<div class="v-grid__single-cell"></div>
-						</div>
-					</div>
-				</div>
+				<h3>Look promising!</h3>
+				<p>What are benefits of CSS grid?</p>
 			</section>
 			<section>
-				<div class="two-column">
-					<div>
-						<h3>Grid <strong>cell</strong></h3>
-						<p>Grid items are auto placed in each cell with the order of grid lines</p>
-					</div>
-					<div class="white-bg">
-						<div class="v-grid">
-							<div class="v-grid__cell v-grid__cell--filled r1 c1">1</div><div class="v-grid__cell v-grid__cell--filled c2">2</div><div class="v-grid__cell v-grid__cell--filled c3">3</div><div class="v-grid__cell v-grid__cell--filled c4">4</div>
-							<div class="v-grid__cell v-grid__cell--filled r2">5</div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
-							<div class="v-grid__cell r3"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
-							<div class="v-grid__cell r4"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
-						</div>
-					</div>
-				</div>
+				Reason 1: Multi-dimension outside-in approach<br>
+				More intuitive and easier to learn<br>
+				No need grid framework<br>
 			</section>
 			<section>
-				<div class="two-column">
-					<div>
-						<h3>Grid <strong>area</strong></h3>
-					</div>
-					<div class="white-bg">
-						<div class="v-grid">
-							<div class="v-grid__cell r1 c1"></div><div class="v-grid__cell c2"></div><div class="v-grid__cell c3"></div><div class="v-grid__cell c4"></div>
-							<div class="v-grid__cell r2"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
-							<div class="v-grid__cell r3"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
-							<div class="v-grid__cell r4"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div><div class="v-grid__cell"></div>
-							<div class="v-grid__area"></div>
-						</div>
-					</div>
-				</div>
+				Reason 2: Reduce HTML complexity
 			</section>
 			<section>
-				OK. What are benefits of CSS grid?
+				Reason 3: New way to RWD that old methods were not possible
 			</section>
 
 			<section>
-				<h2>Looks great! What about browser support?</h2>
+				<h3>Look great!</h3>
+				<p>What about browser support?</p>
 			</section>
 			<section>
 				[img show browser statistics with Vietnam percentage]
 			</section>
-
 			<section>
-
+				<h2>Thank you!</h2>
+				<h3>Questions?</h3>
+				<footer>
+					<p>Github, Twitter, Facebook: <a href="https://about.me/trongthanh">@trongthanh</a></p>
+				</footer>
 			</section>
 
 
