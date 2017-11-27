@@ -158,9 +158,9 @@
 				<div class="two-column">
 					<div>
 						<h3>Floats</h3>
-						<pre><code class="html"><p>...
-<img class=&quot;float-left&quot; src=&quot;...&quot;>
-...</p></code></pre>
+						<pre><code class="html">&lt;p&gt;...
+&lt;img class=&quot;float-left&quot; src=&quot;...&quot;&gt;
+...&lt;/p&gt;</code></pre>
 						<pre><code class="css">.float-left {
   float: left;
 }</code></pre>
@@ -185,7 +185,7 @@
   background-color: blue;
 }
 .sidebar {
-  background-color: hotpink;
+  background-color: red;
 }
 
 
@@ -219,7 +219,7 @@
   float: left;
 }
 .sidebar {
-  background-color: hotpink;
+  background-color: red;
   float: right;
 }
 
@@ -252,7 +252,7 @@
   float: left;
 }
 .sidebar {
-  background-color: hotpink;
+  background-color: red;
   float: right;
 }
 .clearfix::after {
@@ -334,7 +334,8 @@
 }</code></pre>
 					</div>
 					<figure>
-						<video src="img/inline-block-center.mp4" autoplay loop></video>
+						<video data-autoplay loop src="img/inline-block-center.mp4"
+							poster="img/inline-block-center.png"></video>
 					</figure>
 				</div>
 			</section>
@@ -458,14 +459,14 @@
 			</section>
 			<section>
 				<figure>
-					<img src="img/two-possible-website-layout.png" height="520" alt="Two possible website tweet">
-					<figcaption><a href="https://twitter.com/jongold/status/694591217523363840">https://twitter.com/jongold/status/694591217523363840</a></figcaption>
+					<img src="img/bootstrap-everywhere.jpg" height="520" alt="Bootstrap website are everywhere and they all look similar">
+					<figcaption><a href="https://goo.gl/1U2GjJ">https://goo.gl/1U2GjJ</a></figcaption>
 				</figure>
 			</section>
 			<section>
 				<figure>
-					<img src="img/bootstrap-everywhere.jpg" height="520" alt="Bootstrap website are everywhere and they all look similar">
-					<figcaption>by Jen Simmons, <a href="https://goo.gl/1U2GjJ">https://goo.gl/1U2GjJ</a></figcaption>
+					<img src="img/two-possible-website-layout.png" height="520" alt="Two possible website tweet">
+					<figcaption><a href="https://goo.gl/swzuZE">https://goo.gl/swzuZE</a></figcaption>
 				</figure>
 			</section>
 			<section>
@@ -486,6 +487,18 @@
 					<li>Responsive designs with current methods are hard and unintuitive</li>
 				</ul>
 			</section> -->
+			<section>
+				<h3>Problems:</h3>
+				<ul>
+					<li>We've been learning hacks to do <strong>web layout</strong></li>
+					<li>Current tools are one directional, content-out</li>
+					<li>Frameworks and fixed grid limit creativity</li>
+					<li>Layout with CSS is hard!</li>
+				</ul>
+				<aside class="notes">
+					One example is early solution to vertically center align.
+				</aside>
+			</section>
 			<section>
 				<h2>Solution?</h2>
 			</section>
@@ -728,27 +741,140 @@
 			</section>
 
 			<section>
-				<h3>Look promising!</h3>
-				<p>What are benefits of CSS grid?</p>
+				<h3>Looks promising!</h3>
+				<p>If current methods work,<br> what are other benefits of CSS grid?</p>
 			</section>
 			<section>
-				Reason 1: Multi-dimension outside-in approach<br>
-				More intuitive and easier to learn<br>
-				No need grid framework<br>
+				<div class="two-column">
+					<div>
+						<h3>CSS Grid</h3>
+						<ul>
+							<li>Multi-dimension &amp; layout-in approach</li>
+							<li>More intuitive and easier to learn</li>
+							<li>No more grid framework and fixed grid system</li>
+						</ul>
+					</div>
+					<figure>
+						<img src="img/grid-demo-with-lines.png">
+					</figure>
+					<!-- <div class="white-bg grid-demo">
+						<div class="wrapper">
+							<div class="main-content">
+								.main-content
+							</div>
+							<div class="other-content">
+								.other-content
+							</div>
+							<div class="sidebar">
+								.sidebar
+							</div>
+						</div>
+					</div> -->
+				</div>
 			</section>
 			<section>
-				Reason 2: Reduce HTML complexity
+				<p>Simplify HTML markups</p>
 			</section>
 			<section>
-				Reason 3: New way to RWD that old methods were not possible
+				<figure>
+					<img src="img/grid-example-1-slack.png" height="520">
+					<figcaption>From slack.engineering - <a href="https://goo.gl/zJcE8c">https://goo.gl/zJcE8c</a></figcaption>
+				</figure>
+			</section>
+			<section>
+				<div class="two-column two-column--fixed-width">
+					<div>
+						From:
+						<pre><code class="html text-smaller">&lt;section class=&quot;o-section&quot;&gt;
+  &lt;div class=&quot;o-content-container&quot;&gt;
+    &lt;div class=&quot;o-row&quot;&gt;
+      &lt;div class=&quot;col-8&quot;&gt;&hellip;&lt;/div&gt;
+      &lt;div class=&quot;col-4&quot;&gt;&hellip;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;o-row&quot;&gt;
+      &lt;div class=&quot;col-1&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;col-3&quot;&gt;&hellip;&lt;/div&gt;
+      &lt;div class=&quot;col-8&quot;&gt;&hellip;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+					</div>
+					<div>
+						To:
+						<pre><code class="html text-smaller">&lt;section class=&quot;c-photo-collage
+    c-photo-collage--three&quot;&gt;
+  &lt;img src=&quot;example-1.jpg&quot; alt=&quot;&quot;&gt;
+  &lt;img src=&quot;example-2.jpg&quot; alt=&quot;&quot;&gt;
+  &lt;blockquote class=&quot;c-quote&quot;&gt;
+    &lt;p class=&quot;c-quote__text&quot;&gt;&hellip;&lt;/p&gt;
+  &lt;/blockquote&gt;
+  &lt;img src=&quot;example-3.jpg&quot; alt=&quot;&quot;&gt;
+&lt;/section&gt;</code></pre>
+					</div>
+				</div>
+			</section>
+			<section>
+				<p>New ways to RWD that were not<br> possible with old methods</p>
 			</section>
 
 			<section>
-				<h3>Look great!</h3>
-				<p>What about browser support?</p>
+				<figure>
+					<img src="img/grid-example-2.jpg" height="520">
+					<figcaption>Reorder elements in RWD - <a href="https://goo.gl/q8s8ZW">https://goo.gl/q8s8ZW</a></figcaption>
+				</figure>
 			</section>
 			<section>
-				[img show browser statistics with Vietnam percentage]
+				<figure>
+					<video data-autoplay loop src="img/grid-example-3-mor10com.mp4"
+						poster="img/grid-example-3-mor10com.png" height="520"></video>
+					<figcaption>Reorder elements in RWD (contd.)</figcaption>
+				</figure>
+			</section>
+			<section>
+				<figure>
+					<video data-autoplay loop src="img/grid-example-4-dailyprophet.mp4"
+						poster="img/grid-example-4-dailyprophet.png" height="520"></video>
+					<figcaption>Daily Prophet* - <a href="http://redonion.se/cssgrid">http://redonion.se/cssgrid</a></figcaption>
+				</figure>
+				<footer>
+					<p>* Smashing Magazine's CSS Grid Challenge Second Place - <a href="https://goo.gl/UsS4wM">https://goo.gl/UsS4wM</a></p>
+				</footer>
+			</section>
+
+			<section>
+				<h3>CSS Grid Looks Awesome!</h3>
+				<p>What about browser support?<p>
+				<p>Can I use it now?</p>
+			</section>
+			<section>
+				<figure>
+					<img src="img/css-grid-caniuse.png" height="520">
+				</figure>
+				<div class="coccoc-overlay fragment">
+					<img src="img/coccoc-icon.png">
+					<strong>66</strong>
+				</div>
+				<footer class="fragment">
+					<p>Coc Coc make up about <strong>18.63%</strong> of all desktop browsers in Vietnam, according to gs.statcounter.com</p>
+				</footer>
+			</section>
+			<section>
+				<p>OK. What about older browsers?</p>
+				<p>What about Internet Explorer?</p>
+			</section>
+			<section>
+				<figure>
+					<img class="no-border fragment" src="img/dowebsites.png" height="520">
+					<div class="text-smaller">
+						<a href="http://dowebsitesneedtolookexactlythesameineverybrowser.com/">dowebsitesneedtolookexactlythesameineverybrowser.com</a>
+					</div>
+				</figure>
+			</section>
+			<section>
+				<figure>
+					<img src="img/lots-of-devices.jpg" height="520" alt="Lots of screen to support">
+					<figcaption><a href="https://flic.kr/p/cfQxzU">https://flic.kr/p/cfQxzU</a></figcaption>
+				</figure>
 			</section>
 			<section>
 				<h2>Thank you!</h2>

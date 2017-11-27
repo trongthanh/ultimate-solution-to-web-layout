@@ -435,7 +435,7 @@ body {
 
 .two-column img {
 	max-height: none;
-	max-width: none;
+	max-width: 100%;
 }
 
 .two-column video {
@@ -499,6 +499,16 @@ section > footer {
 	position: relative;
 	display: block;
 	z-index: -1;
+}
+
+.text-smaller {
+	font-size: 0.8em;
+}
+
+.reveal .no-border {
+	border: 0;
+	padding: 0;
+	background: transparent;
 }
 
 /**
@@ -703,8 +713,14 @@ section > footer {
 }
 
 /*********************************************
- * SLIDES CONTENT
+ * SLIDES CONTENTS
  *********************************************/
+
+.floats-demo,
+.clearfix-demo,
+.grid-demo {
+	width: 100%;
+}
 
 .floats-demo {
 	font-size: 14px;
@@ -719,17 +735,13 @@ section > footer {
 	float: left;
 }
 
-.clearfix-demo,
-.flexbox-demo {
-	font-size: 0.6em;
-	width: 100%;
-}
-
 .wrapper {
 	position: relative;
 	border: 4px solid black;
 	margin-top: 30px;
 	min-height: 40px;
+	font-size: 0.6em;
+	width: 100%;
 }
 
 .wrapper::before {
@@ -815,6 +827,44 @@ section > footer {
 .flexbox-demo .sidebar {
 	margin: 20px;
 	margin-left: 10px;
+}
+
+.grid-demo .wrapper {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 1fr 1fr 1fr;
+}
+
+.grid-demo .main-content {
+	grid-column: 1 / 2;
+	grid-row: 1 / 3;
+}
+
+.grid-demo .other-content {
+	grid-column: 1 / 2;
+	grid-row: 3 / 4;
+}
+
+.grid-demo .sidebar {
+	grid-column: -1 / -2;
+	grid-row: 1 / -1;
+}
+
+.coccoc-overlay {
+	position: absolute;
+	right: 10%;
+	bottom: 15px;
+}
+
+.reveal .coccoc-overlay img {
+	border: 0;
+	padding: 0;
+	width: 100px;
+	margin: 0;
+}
+
+.reveal .coccoc-overlay span {
+	font-size: 1.5em;
 }
 
 /*********************************************
