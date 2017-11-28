@@ -107,7 +107,7 @@
 				</figure>
 
 				<aside class="notes">
-					Although Zuckerberge was a programming genious, he's still novice with Web Layout
+					Although Zuckerberg was a programming genius, he's still novice with Web Layout
 				</aside>
 			</section>
 
@@ -156,17 +156,18 @@
 
 			<section>
 				<div class="two-column">
-					<div>
+					<div style="max-height: 500px">
 						<h3>Floats</h3>
-						<pre><code class="html">&lt;p&gt;...
+							<pre><code class="html">&lt;p&gt;...
 &lt;img class=&quot;float-left&quot; src=&quot;...&quot;&gt;
 ...&lt;/p&gt;</code></pre>
-						<pre><code class="css">.float-left {
+							<hr>
+							<pre><code class="css">.float-left {
   float: left;
 }</code></pre>
 
 					</div>
-					<div class="floats-demo white-bg">
+					<div class="floats-demo white-bg" >
 						<p>The float CSS property specifies that an element should be placed along the left or right side of its container, allowing text and inline elements to wrap around it.
 						<img class="float-left" src="img/float-img.jpg" alt="Float image doge" width="120">
 						The element is removed from the normal flow of the web page, though still remaining a part of the flow (in contrast to absolute positioning).
@@ -341,19 +342,21 @@
 			</section>
 			<section>
 				<h3>Inline-block</h3>
-				<div class="two-column">
-					<ul>
-						<li>Implicit inline character spacing</li>
-						<li>text-align are inherited in child elements</li>
-						<li>Popular grid frameworks use floats</li>
-					</ul>
+				<div class="two-column two-column--fixed-width">
 					<div>
-						<pre><code class="html"><ul class="menu">
-  <li>Home</li><!-- no space
---><li>About</li><!-- no space
---><li>Pricing</li><!-- no space
---><li>Contact</li>
-</ul></code></pre>
+						<ul>
+							<li>Implicit inline character spacing</li>
+							<li>text-align are inherited in child elements</li>
+							<li>Popular grid frameworks use floats</li>
+						</ul>
+					</div>
+					<div>
+						<pre><code class="html">&lt;ul class=&quot;menu&quot;&gt;
+  &lt;li&gt;Home&lt;/li&gt;&lt;!-- no space
+--&gt;&lt;li&gt;About&lt;/li&gt;&lt;!-- no space
+--&gt;&lt;li&gt;Pricing&lt;/li&gt;&lt;!-- no space
+--&gt;&lt;li&gt;Contact&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
 					</div>
 				</div>
 			</section>
@@ -667,7 +670,7 @@
 				<div class="two-column">
 					<div>
 						<h3>Grid <strong>cell</strong></h3>
-						<p>Or they can be mannually placed with:</p>
+						<p>Or they can be manually placed with:</p>
 						<pre><code class="css">.cell {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -927,7 +930,7 @@
 				<h3>How?</h3>
 				<ul>
 					<li>Start with 1-column mobile-first layout</li>
-					<li class="fragment">Mobile layout will be fallback for all browsers</li>
+					<li class="fragment">Mobile layout will be fall-back for all browsers</li>
 					<li class="fragment">Use CSS <strong>@support</strong> to detect grid support</li>
 					<li class="fragment">Apply CSS grid layout as enhancement to simpler layout method</li>
 				</ul>
@@ -943,7 +946,7 @@
 				</ul>
 			</section>
 			<section>
-				<p>Example of a 12-column flex fallback</p>
+				<p>Example of a 12-column flex fall-back</p>
 				<pre><code class="css">.grid {
   display: flex;
   flex-wrap: wrap;

@@ -478,7 +478,7 @@ section > footer {
 	color: var(--c-blue);
 }
 
-.hljs {
+body:not(.print-pdf) .hljs {
 	background: rgba(0, 0, 0, 0.6);
 }
 
@@ -613,6 +613,8 @@ section > footer {
 	border-left-color: var(--c-blue);
 	border-right-color: var(--c-blue);
 	font-size: 20px;
+	width: 100%;
+	height: 100%;
 }
 
 /* prettier-ignore */
@@ -692,6 +694,8 @@ section > footer {
 	grid-row: 2 / 3;
 	background-color: var(--c-red);
 	opacity: 0.5;
+	width: 100%;
+	height: 100%;
 }
 
 .v-grid__track--v {
@@ -699,6 +703,8 @@ section > footer {
 	grid-row: 1 / 5;
 	background-color: var(--c-blue);
 	opacity: 0.5;
+	width: 100%;
+	height: 100%;
 }
 
 .v-grid__single-cell {
@@ -707,6 +713,8 @@ section > footer {
 	background-color: var(--c-blue);
 	z-index: 1;
 	opacity: 0.7;
+	width: 100%;
+	height: 100%;
 }
 
 .v-grid__area {
@@ -715,6 +723,8 @@ section > footer {
 	background-color: var(--c-blue);
 	z-index: 1;
 	opacity: 0.7;
+	width: 100%;
+	height: 100%;
 }
 
 /*********************************************
@@ -906,6 +916,7 @@ section > footer {
 	margin-top: 80px;
 }
 
-.print-pdf .hljs {
-	background: #282c34;
+/* fix wrong height calculation in print mode */
+.print-pdf .two-column {
+	grid-template-columns: 50% 50%;
 }
