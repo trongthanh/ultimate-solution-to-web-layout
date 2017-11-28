@@ -710,7 +710,7 @@
 					</div>
 				</div>
 				<footer>
-					<p>(1) Minus (-) count lines from opposite side. (2) span the track instead of specific line No.</p>
+					<p>1) Minus - count lines from opposite side. 2) span the track instead of specific line No.</p>
 				</footer>
 			</section>
 			<section>
@@ -742,7 +742,7 @@
 
 			<section>
 				<h3>Looks promising!</h3>
-				<p>If current methods work,<br> what are other benefits of CSS grid?</p>
+				<p>If current methods work though,<br> what are other benefits of CSS grid?</p>
 			</section>
 			<section>
 				<div class="two-column">
@@ -814,6 +814,12 @@
 				</div>
 			</section>
 			<section>
+				<figure>
+					<img src="img/grid-example-1-ft.png">
+					<figcaption><a href="https://twitter.com/adgad/status/925728861022773248">https://twitter.com/adgad/status/925728861022773248</a></figcaption>
+				</figure>
+			</section>
+			<section>
 				<p>New ways to RWD that were not<br> possible with old methods</p>
 			</section>
 
@@ -840,6 +846,20 @@
 					<p>* Smashing Magazine's CSS Grid Challenge Second Place - <a href="https://goo.gl/UsS4wM">https://goo.gl/UsS4wM</a></p>
 				</footer>
 			</section>
+			<section>
+				<figure>
+					<div class="scrolling-image">
+						<img src="img/grid-example-5-skew.png">
+					</div>
+					<figcaption>3 grid containers with skew effect<br> <a href="https://codepen.io/andybarefoot/full/MERBPx">https://codepen.io/andybarefoot/full/MERBPx</a></figcaption>
+				</figure>
+			</section>
+			<section>
+				<figure>
+					<img src="img/grid-example-6-marvel-comic.png" height="520">
+					<figcaption>CSS Grid with clip path<br> <a href="https://codepen.io/dannievinther/full/EvVggR/">https://codepen.io/dannievinther/full/EvVggR/</a></figcaption>
+				</figure>
+			</section>
 
 			<section>
 				<h3>CSS Grid Looks Awesome!</h3>
@@ -854,21 +874,36 @@
 					<img src="img/coccoc-icon.png">
 					<strong>66</strong>
 				</div>
-				<footer class="fragment">
-					<p>Coc Coc make up about <strong>18.63%</strong> of all desktop browsers in Vietnam, according to gs.statcounter.com</p>
+				<footer>
+					<p>IE 10-11 support an older specs of CSS Grid layout</p>
 				</footer>
 			</section>
 			<section>
-				<p>OK. What about older browsers?</p>
-				<p>What about Internet Explorer?</p>
+				<figure>
+					<img src="img/statcounter-browsers-vietnam.png">
+					<figcaption>CSS Grid supported browsers in Vietnam may reach up to <strong>80-90%</strong></figcaption>
+				</figure>
+			</section>
+			<section>
+				<p>OK. What about older browsers?*</p>
+				<footer>
+					<p>* Most likely: What about Internet Explorer?</p>
+				</footer>
 			</section>
 			<section>
 				<figure>
 					<img class="no-border fragment" src="img/dowebsites.png" height="520">
-					<div class="text-smaller">
-						<a href="http://dowebsitesneedtolookexactlythesameineverybrowser.com/">dowebsitesneedtolookexactlythesameineverybrowser.com</a>
+					<div>
+						<small><a href="http://dowebsitesneedtolookexactlythesameineverybrowser.com/">http://do websites need to look exactly the same in every browser.com</a></small>
 					</div>
 				</figure>
+			</section>
+
+			<section>
+				<ul>
+					<li>Pixel perfect layout?</li>
+					<li class="fragment">Same cross-browser experience?</li>
+				</ul>
 			</section>
 			<section>
 				<figure>
@@ -877,8 +912,58 @@
 				</figure>
 			</section>
 			<section>
-				<h2>Thank you!</h2>
-				<h3>Questions?</h3>
+				<h2>Progressive Enhancement</h2>
+				<ul>
+					<li class="strike-through">Pixel perfect layout?</li>
+					<li class="strike-through">Same cross-browser experience?</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>How?</h2>
+			</section>
+
+			<section>
+				<h3>How?</h3>
+				<ul>
+					<li>Start with 1-column mobile-first layout</li>
+					<li class="fragment">Mobile layout will be fallback for all browser</li>
+					<li class="fragment">Use CSS <strong>@support</strong> to detect grid support</li>
+					<li class="fragment">Apply CSS grid layout as enhancement to simpler layout method</li>
+				</ul>
+			</section>
+			<section>
+				<p>HOW? (contd.)</p>
+				<p>When container has <code>display:grid</code>. Its children:</p>
+				<ul>
+					<li>using floats, lose their float behavior</li>
+					<li>vertical-align has no effect</li>
+					<li>Flex items become grid items</li>
+					<li>Block and inline-block become grid items</li>
+				</ul>
+			</section>
+			<section>
+				<p>Example of a 12-column flex fallback</p>
+				<pre><code class="css">.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
+}
+
+.grid > * {
+  flex: 1 1 25%; /* 1/4 */
+  margin: 0 20px 20px 20px;
+}</code></pre>
+			</section>
+			<section>
+				<h3>So, let's use <strong>CSS Grid</strong> today!</h3>
+			</section>
+			<section>
+				<h3>Thank you!</h3>
+				<p>Questions?</p>
 				<footer>
 					<p>Github, Twitter, Facebook: <a href="https://about.me/trongthanh">@trongthanh</a></p>
 				</footer>
