@@ -370,6 +370,9 @@
 					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
 					<li class="timeline__item"><p class="timeline__label">&nbsp;</p></li>
 				</ul>
+				<aside class="notes">
+					Flex boxes solve a lot of layout use cases that required hack before: vertical center alignment, justify content.
+				</aside>
 			</section>
 			<section>
 				<div class="two-column two-column--fixed-width">
@@ -399,6 +402,7 @@
 						</div>
 					</div>
 				</div>
+
 				<aside class="notes">
 					At first, this layout looks like it can be solved with `flex-direction: column`.
 					But the height of content is unknown so we don't know where to set the wrapper
@@ -439,7 +443,7 @@
 				<h3>Flex box</h3>
 				<ul>
 					<li>One directional layout method</li>
-					<li>Layout with flex boxes require hacks</li>
+					<li>Full page layout with flex boxes are still hacky</li>
 				</ul>
 			</section>
 			<section>
@@ -465,10 +469,21 @@
 					<img src="img/bootstrap-everywhere.jpg" height="520" alt="Bootstrap website are everywhere and they all look similar">
 					<figcaption><a href="https://goo.gl/1U2GjJ">https://goo.gl/1U2GjJ</a></figcaption>
 				</figure>
+				<aside class="notes">
+					I have to replace or use another button class in order to style the button intended by designer.
+				</aside>
 			</section>
 			<section>
 				<figure>
 					<img src="img/two-possible-website-layout.png" height="520" alt="Two possible website tweet">
+					<figcaption><a href="https://goo.gl/swzuZE">https://goo.gl/swzuZE</a></figcaption>
+				</figure>
+			</section>
+			<section>
+				<figure>
+					<div style="background-image:url(img/two-possible-website-layout.png);
+						background-size: 110%; background-position: center 60%; width: 90%; height: 520px; margin: 20px auto;">
+					</div>
 					<figcaption><a href="https://goo.gl/swzuZE">https://goo.gl/swzuZE</a></figcaption>
 				</figure>
 			</section>
@@ -479,6 +494,9 @@
 					</div>
 					<figcaption>Every F*king Bootstrap Website Ever / <a href="http://adventurega.me/bootstrap/">http://adventurega.me/bootstrap/</a></figcaption>
 				</figure>
+				<aside class="notes">
+					CSS Frameworks are great for quick prototype and proof of concepts. OK for product websites but no-good for creative websites.
+				</aside>
 			</section>
 
 			<!-- <section>
@@ -698,8 +716,8 @@
 						<h3>Grid <strong>area</strong></h3>
 						<p>Rectangular area between 4 grid lines.</p>
 						<pre><code class="css">.area {
-  grid-column: 2 / -2; /*(1)*/
-  grid-row: 2 / span 2; /*(2)*/
+  grid-column: 1 / 4;
+  grid-row: 2 / span 2; /*(1)*/
 }</code></pre>
 					</div>
 					<div class="white-bg">
@@ -713,7 +731,7 @@
 					</div>
 				</div>
 				<footer>
-					<p>1) Minus - count lines from opposite side. 2) span the track instead of specific line No.</p>
+					<p>1) span the track instead of specific line No.</p>
 				</footer>
 			</section>
 			<section>
