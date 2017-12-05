@@ -4,6 +4,8 @@ My slides for Vietnam Web Summit 2017.
 
 Presentation engine: RevealJS.
 
+This slides was coded using some latest browser features, therefore, not suitable for all browsers. Some of the features are: CSS Grid, Custom properties,... Please view with latest Chrome, Firefox, Edge, Safari.
+
 ---
 © 2017 Tran Trong Thanh
 
