@@ -995,6 +995,7 @@
 		</div>
 	</div>
 
+	<script src="plugin/highlight/highlight.js"></script>
 	<script src="lib/js/head.min.js"></script>
 	<script src="js/reveal.js"></script>
 
@@ -1012,12 +1013,11 @@
 				{ src: 'plugin/markdown/marked.js' },
 				{ src: 'plugin/markdown/markdown.js' },
 				{ src: 'plugin/notes/notes.js', async: true },
-				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() {
-					hljs.initHighlightingOnLoad();
-				}}
 			]
 		});
 
+		//
+		hljs.initHighlightingOnLoad();
 
 		// print-pdf special treatment
 		if (window.location.search.match( /print-pdf/gi ) ) {
