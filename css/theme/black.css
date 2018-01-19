@@ -766,7 +766,8 @@ body:not(.print-pdf) .hljs {
 	left: 0;
 }
 
-.main-content {
+.main-content,
+.content {
 	margin: 10px;
 	background-color: var(--c-blue);
 	min-height: 250px;
@@ -780,7 +781,8 @@ body:not(.print-pdf) .hljs {
 	padding: 10px;
 }
 
-.other-content {
+.other-content,
+.header {
 	margin: 10px;
 	background-color: var(--c-green);
 	min-height: 100px;
@@ -863,6 +865,45 @@ body:not(.print-pdf) .hljs {
 .grid-demo .sidebar {
 	grid-column: -1 / -2;
 	grid-row: 1 / -1;
+}
+
+.grid-demo-rwd .wrapper {
+	height: 450px;
+	margin: 20px auto;
+	width: 50%;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		'header'
+		'content'
+		'sidebar';
+}
+
+.grid-demo-rwd .wrapper--desktop {
+	width: auto;
+	grid-template-columns: 1fr 2fr 2fr;
+	grid-template-areas:
+		'....... header header'
+		'sidebar content content';
+}
+
+.grid-demo-rwd .header {
+	margin: 0;
+	min-height: 100px;
+	grid-area: header;
+}
+
+.grid-demo-rwd .content {
+	margin: 0;
+	min-height: 200px;
+	grid-area: content;
+}
+
+.grid-demo-rwd .sidebar {
+	margin: 0;
+	min-height: 100px;
+	grid-area: sidebar;
 }
 
 .coccoc-overlay {

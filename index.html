@@ -4,13 +4,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>The Ultimate Solution to Web Layout - Tran Trong Thanh - VWS2017</title>
-	<meta name="description" content="Slides of my presentation at Vietnam Web Summit 2017. In which I discussed current tools for web layout and why CSS Grid will fundamentally change how we do web layout in the near future.">
+	<title>The Ultimate Solution to Web Layout - Tran Trong Thanh</title>
+	<meta name="description" content="Slides of my presentation: The Ultimate Solution to Web Layout. In which I discussed current tools for web layout and why CSS Grid will fundamentally change how we do web layout in the near future.">
 
 	<meta property="og:url"         content="https://int3ractive.com/ultimate-solution-to-web-layout/" />
 	<meta property="og:type"        content="article" />
-	<meta property="og:title"       content="The Ultimate Solution to Web Layout - Tran Trong Thanh - VWS2017" />
-	<meta property="og:description" content="Slides of my presentation at Vietnam Web Summit 2017. In which I discussed current tools for web layout and why CSS Grid will fundamentally change how we do web layout in the near future." />
+	<meta property="og:title"       content="The Ultimate Solution to Web Layout - Tran Trong Thanh" />
+	<meta property="og:description" content="Slides of my presentation: The Ultimate Solution to Web Layout. In which I discussed current tools for web layout and why CSS Grid will fundamentally change how we do web layout in the near future." />
 	<meta property="og:image"       content="https://int3ractive.com/ultimate-solution-to-web-layout/cover.png" />
 
 	<!-- Theme used for syntax highlighting of code -->
@@ -35,7 +35,7 @@
 <body>
 	<div class="reveal">
 		<header class="slides__header">
-			<img class="logo logo--vws" src="img/logo-vws.png" height="40">
+			<img class="logo logo--vws" src="img/logo-vws.png" height="40" style="visibility: hidden">
 			<img class="logo logo--nau" src="img/logo-nau.png" height="40">
 		</header>
 		<div class="slides">
@@ -43,7 +43,7 @@
 				<h2>The Ultimate Solution to</h2>
 				<h1>Web Layout</h1>
 				<footer>
-					<p>Vietnam Web Summit 12-2017</p>
+					<p>01-2018</p>
 				</footer>
 			</section>
 			<section>
@@ -555,11 +555,11 @@
 					</div>
 					<div>
 						<pre><code class="html"><main class="wrapper">
-  <header class="main-header"></header>
-  <div class="main-content"></div>
-  <div class="other-content"></div>
-  <aside class="sidebar"></aside>
-  <footer class="main-footer"></footer>
+  ﹤header class="main-header"﹥﹤/header﹥
+  ﹤div class="main-content"﹥﹤/div﹥
+  ﹤div class="other-content"﹥﹤/div﹥
+  ﹤aside class="sidebar"﹥﹤/aside﹥
+  ﹤footer class="main-footer"﹥﹤/footer﹥
 </main></code></pre>
 						<hr>
 						<pre><code class="css">.wrapper {
@@ -575,13 +575,13 @@
 						<p>direct children of grid container</p>
 					</div>
 					<div>
-						<pre><code class="html"><main class="wrapper">
+						<pre><code class="html">﹤main class="wrapper"﹥
   <header class="main-header"></header>
   <div class="main-content"></div>
   <div class="other-content"></div>
   <aside class="sidebar"></aside>
   <footer class="main-footer"></footer>
-</main></code></pre>
+﹤/main﹥</code></pre>
 						<p><small>(Here: grid items are children of <code>main.wrapper</code>)</small></p>
 					</div>
 				</div>
@@ -839,6 +839,70 @@
 				</figure>
 			</section>
 			<section>
+				<p>More intuitive responsive layout setup</p>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						Mobile:
+						<pre><code class="css text-smaller">.wrapper {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "content"
+    "sidebar";
+}
+.header { grid-area: header; }
+.content { grid-area: content; }
+.sidebar { grid-area: sidebar; }</code></pre>
+					</div>
+					<div class="white-bg grid-demo-rwd">
+						<div class="wrapper">
+							<div class="header">
+								.header
+							</div>
+							<div class="sidebar">
+								.sidebar
+							</div>
+							<div class="content">
+								.content
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="two-column">
+					<div>
+						Desktop:
+						<pre><code class="css text-smaller">@media (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-areas:
+      "....... header  header"
+      "sidebar content content";
+  }
+}</code></pre>
+					</div>
+					<div class="white-bg grid-demo-rwd">
+						<div class="wrapper wrapper--desktop">
+							<div class="header">
+								.header
+							</div>
+							<div class="sidebar">
+								.sidebar
+							</div>
+							<div class="content">
+								.content
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
 				<p>New ways to RWD that were not<br> possible with old methods</p>
 			</section>
 
@@ -904,9 +968,9 @@
 				</figure>
 			</section>
 			<section>
-				<p>OK. What about older browsers?*</p>
+				<p>OK. What do I do with older browsers?*</p>
 				<footer>
-					<p>* Most likely: What about Internet Explorer?</p>
+					<p>* Most likely: What about Internet Explorer? 🤣</p>
 				</footer>
 			</section>
 			<section>
